@@ -11,8 +11,8 @@ String.prototype.toJadenCase = function (arg) {
 };
 
 var str = "How can mirrors be real if our eyes aren't real";
-
-console.log(str.toJadenCase())
+//TEST
+// console.log(str.toJadenCase())
 
 
 //----SUM OF DIGITS/DIGITAL ROOT----//
@@ -49,3 +49,20 @@ const likes = (names) => {
       : `${names[0]}, ${names[1]} and ${names[2]}`} like this`
   }
 };
+
+
+//----BREAK CAMEL CASE----//
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+// Example
+// solution("camelCasing")  ==  "camel Casing"
+
+function solution(string) {
+  // split the string
+  // map through to find uppercase characters
+  // add a space before each uppercase character
+  // join back into a string
+  return string.split('').map(letter => letter == letter.toUpperCase()? ` ${letter}` : letter).join('')
+}
+//TEST
+// console.log(solution("camelCasing"))

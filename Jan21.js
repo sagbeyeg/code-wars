@@ -66,3 +66,21 @@ function solution(string) {
 }
 //TEST
 // console.log(solution("camelCasing"))
+
+
+//----COMPLEMENTARY DNA----//
+// In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". You have function with one side of the DNA (string, except for Haskell); you need to get the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+// DNAStrand ("ATTGC") // return "TAACG"
+// DNAStrand ("GTAT") // return "CATA" 
+
+function DNAStrand(dna){
+  var newString = []
+  for (let i = 0; i < dna.length; i ++) {
+    dna[i] == "A" && newString.push("T")
+    dna[i] == "T" && newString.push("A")
+    dna[i] == "C" && newString.push("G")
+    dna[i] == "G" && newString.push("C")
+  }
+  return newString.join('')
+}

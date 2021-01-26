@@ -13,12 +13,26 @@
 // C          100
 // D          500
 // M          1,000
-
+const value = {
+  "I" : 1,
+  "V" : 5,
+  "X" : 10,
+  "L" : 50,
+  "C" : 100,
+  "D" : 500,
+  "M" : 1000
+}
 const solution = roman => {
-  
+  var split = roman.split("")
+  var sum = 0
+  split.map(num => {
+    sum += value[num]
+  })
+  split[split.length - 2] == "I" && split[split.length - 1] !== "I" ? sum -= 2 : null
+  return sum
 }
 //TEST
-console.log(solution('XXI')); // should return 21
+console.log(solution('XIX')); // should return 4
 
 
 //----PAGINATION HELPER----//

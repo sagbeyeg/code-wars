@@ -4,16 +4,21 @@
 // Not Jaden - Cased: "How can mirrors be real if our eyes aren't real"
 // Jaden - Cased: "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
-String.prototype.toJadenCase = function (arg) {
-  return this.split(" ").map(word =>
-    word.charAt(0).toUpperCase() + word.slice(1, word.length)
-  ).join(" ")
-};
+// String.prototype.toJadenCase = function (arg) {
+//   return this.split(" ").map(word =>
+//     word.charAt(0).toUpperCase() + word.slice(1, word.length)
+//   ).join(" ")
+// };
 
 var str = "How can mirrors be real if our eyes aren't real";
 //TEST
-// console.log(str.toJadenCase())
 
+//BEST PRACTICE
+String.prototype.toJadenCase = function (arg) {
+  return this.replace((/^|\s[a-z]/g), letter => letter.toUpperCase())
+}
+  
+console.log(str.toJadenCase())
 
 //----SUM OF DIGITS/DIGITAL ROOT----//
 // Digital root is the recursive sum of all the digits in a number.

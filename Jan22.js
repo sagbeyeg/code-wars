@@ -7,13 +7,11 @@
 function anagrams(word, words) {
   newArray = []
   var x = word.split("").sort().join("");
-  // console.log(x)
   words.map(word => {
     var y = word.split("").sort().join("")
-    // console.log(y)
     x === y ? newArray.push(word) : null
   })
   return newArray
 }
-
-anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])
+//TEST
+// anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada'])

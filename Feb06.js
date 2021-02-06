@@ -17,6 +17,7 @@ const encryptThis = text => {
   //   let lastLetter = wordArray[i][wordArray[i].length-1]
   //   console.log(lastLetter)
   //   let secondLetter = wordArray[i][1]
+
   //   console.log(secondLetter)
   //   let meat = wordArray[i].slice(2, wordArray[i].length-1)
   //   console.log(meat)
@@ -29,14 +30,22 @@ const encryptThis = text => {
   // return newArray.join(" ")
   let wordArray = []
   
-  text.split(" ").map(word => {
-    let split = word.split("")
-    console.log(split)
+  if (text.length === 1) {
+    return `${text.charCodeAt(0)}`
+  } else if (text.length === 2) {
+    return `${text.charCodeAt(0)}${text[1]}`
+  } else if (text.length > 2) {
+  
+    text.split(" ").map(word => {
+      let split = word.split("")
+      console.log(split)
+    })
+    // console.log(wordArray)
+    // return wordArray
+  }
+
     
     
-  })
-  console.log(wordArray)
-  // return wordArray
 
 }
 

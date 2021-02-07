@@ -35,18 +35,24 @@ const encryptThis = text => {
   } else if (text.length === 2) {
     return `${text.charCodeAt(0)}${text[1]}`
   } else if (text.length > 2) {
-  
     text.split(" ").map(word => {
       let split = word.split("")
-      console.log(split)
+      // console.log(split)
+      let code = `${split[0].charCodeAt(0)}`
+      let second = split[1]
+      let last = split[split.length-1]
+      // console.log(code)
+      // console.log(second)
+      // console.log(last)
+      split[0] = code
+      split[1] = last
+      split[split.length-1] = second
+      // console.log(split)
+      wordArray.push(split.join(""))
+      // console.log(wordArray)
     })
-    // console.log(wordArray)
-    // return wordArray
+    return wordArray.join(" ")
   }
-
-    
-    
-
 }
 
 // console.log(encryptThis("Hello")) // === "72olle"

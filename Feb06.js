@@ -7,27 +7,6 @@
 // Examples:
 
 const encryptThis = text => {
-  // let wordArray = text.split(" ")
-  // let newArray = []
-  // console.log(wordArray)
-
-  // for (i=0; i<wordArray.length; i++){
-  //   let code = wordArray[i].charCodeAt(0)
-  //   console.log(code)
-  //   let lastLetter = wordArray[i][wordArray[i].length-1]
-  //   console.log(lastLetter)
-  //   let secondLetter = wordArray[i][1]
-
-  //   console.log(secondLetter)
-  //   let meat = wordArray[i].slice(2, wordArray[i].length-1)
-  //   console.log(meat)
-    
-  //     let newWord = `${code}${lastLetter}${meat}${secondLetter}`    
-  //     console.log(newWord)
-  //     newArray.push(newWord)
-  // }
-
-  // return newArray.join(" ")
   let wordArray = []
   
   if (text.length === 1) {
@@ -54,7 +33,6 @@ const encryptThis = text => {
     return wordArray.join(" ")
   }
 }
-
 // console.log(encryptThis("Hello")) // === "72olle"
 // encryptThis("good") // === "103doo"
 console.log(encryptThis("hello world")) // === "104olle 119drlo"

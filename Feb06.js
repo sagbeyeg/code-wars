@@ -16,24 +16,19 @@ const encryptThis = text => {
   } else if (text.length > 2) {
     text.split(" ").map(word => {
       let split = word.split("")
-      // console.log(split)
       let code = `${split[0].charCodeAt(0)}`
       let second = split[1]
       let last = split[split.length-1]
-      // console.log(code)
-      // console.log(second)
-      // console.log(last)
       split[0] = code
       split[1] = last
       split[split.length-1] = second
-      // console.log(split)
       wordArray.push(split.join(""))
-      // console.log(wordArray)
     })
     return wordArray.join(" ")
   }
 }
-// console.log(encryptThis("Hello")) // === "72olle"
-// encryptThis("good") // === "103doo"
+
+//TEST
+console.log(encryptThis("Hello")) // === "72olle"
 console.log(encryptThis("hello world")) // === "104olle 119drlo"
-console.log(encryptThis("A")) // === "65"
+console.log(encryptThis("A")) // === "65"q

@@ -4,7 +4,13 @@
 // Note: no empty arrays will be given.
 
 function highestRank(arr){
-  
+  let sorted = arr.sort()
+  highestNum = sorted[sorted.length-1]
+  console.log(highestNum)
+  for (let i=0; i<sorted.length; i++){
+
+  }
+  return highestNum
 }
 //TEST
 

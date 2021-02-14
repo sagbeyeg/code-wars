@@ -4,23 +4,25 @@
 // Note: no empty arrays will be given.
 
 function highestRank(arr){
-  let sorted = arr.sort((a,b) => a-b)
-  console.log(sorted)
-  highestNum = 0
-  // console.log(highestNum)
-  frequency = {}
-  for (let i=0; i<sorted.length; i++){
-    if (frequency[sorted[i]]){
-      frequency[sorted[i]] += 1
+  let frequency = {}
+  for (let i=0; i<arr.length; i++){
+    if (frequency[arr[i]]){
+      frequency[arr[i]] += 1
     } else {
-      frequency[sorted[i]] = 1
+      frequency[arr[i]] = 1
     }
   }
 
+  let keyArray = Object.keys(frequency)
+  let highest = keyArray[0]
   console.log(frequency)
-  return highestNum
+  console.log(keyArray)
+  for (let j=0; j<keyArray.length; j++){
+    frequency[keyArray[j]] >= frequency[highest] ? highest = keyArray[j] : null
+  }
+  return parseInt(highest)
 }
 //TEST
 
-console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 10, 12])) // 12
+console.log(highestRank([12, 4, 10, 4, 8, 12, 7, 4, 6, 4, 10, 10, 12])) // 12
 // console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10])) // 3

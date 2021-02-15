@@ -12,11 +12,8 @@ function highestRank(arr){
       frequency[arr[i]] = 1
     }
   }
-
   let keyArray = Object.keys(frequency)
   let highest = keyArray[0]
-  console.log(frequency)
-  console.log(keyArray)
   for (let j=0; j<keyArray.length; j++){
     frequency[keyArray[j]] >= frequency[highest] ? highest = keyArray[j] : null
   }

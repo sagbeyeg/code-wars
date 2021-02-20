@@ -6,8 +6,9 @@ function longestConsec(arr, k) {
   if (arr.length === 0 || k > arr.length || k <= 0){
     return ""
   } else {
-    for(let i = 0; i< arr.length - 1; i++){
-      newWords.push(`${arr[i]}${arr[i+1]}`)
+    console.log("array:", arr, "k:", k)
+    for(let i = 0; i < arr.length; i++){
+      newWords.push(arr.slice(i, i+k).join(""))
     }
   }
   return newWords.reduce((a,b) => a.length >= b.length ? a : b)

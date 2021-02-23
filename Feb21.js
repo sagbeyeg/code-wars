@@ -10,9 +10,8 @@
 const countDeafRats = town => {
   let deaf = 0
   let split = town.split("P")
-  console.log(split)
-  console.log("left split:",split[0].split(""))
-  console.log("right split:",split[1].split(""))
+  console.log("split:", split)
+  return deaf
 }
 
 // Example

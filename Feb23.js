@@ -8,20 +8,20 @@
 // ~O = Rat going right
 
 const countDeafRats = town => {
-  let deaf = 0
-  let split = town.split("P")
+  let split = town.replace(/[ ]/g, "").split("P")
   console.log("split:", split)
-  let leftSplit = split[0].split("")
+  const putSpace = item => item.replace(/(.{2})/g, "$1 ")
+  let leftSplit = putSpace(split[0]).match(/O~/g || []).length
   console.log("left split:", leftSplit)
-  let rightSplit = split[1].split("")
-  console.log("left split:", rightSplit)
-  return deaf
+  let rightSplit = putSpace(split[1]).match(/~O/g || []).length
+  console.log("right split:", rightSplit)
+
 }
 
 // Example
 // console.log(countDeafRats("~O~O~O~O P")) // 0
 // ex1 ~O~O~O~O P has 0 deaf rats
-console.log(countDeafRats("P O~ O~ ~O O~")) // 1
+// console.log(countDeafRats("P O~ O~ ~O O~")) // 1
 // ex2 P O~ O~ ~O O~ has 1 deaf rat
-// console.log(countDeafRats("~O~O~O~OP~O~OO~")) // 2
+console.log(countDeafRats("~O~O~O~OP~O~OO~")) // 2
 // ex3 ~O~O~O~OP~O~OO~ has 2 deaf rats

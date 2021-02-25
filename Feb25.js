@@ -16,15 +16,17 @@ Math.ceil = function(number) {
 };
 
 Math.floor = function(number) {
-
+  let split = number.toString().split(".")
+  // console.log(split)
+  return parseInt(split[0])
 };
 
 //TEST
-console.log(Math.round(0.4)) // => 0
-console.log(Math.round(0.5)) // => 1
+// console.log(Math.round(0.4)) // => 0
+// console.log(Math.round(0.5)) // => 1
 
-console.log(Math.ceil(0.4))// => 1
-console.log(Math.ceil(0.5))// => 1
+// console.log(Math.ceil(0.4))// => 1
+// console.log(Math.ceil(0.5))// => 1
 
 console.log(Math.floor(0.4)) // => 0
 console.log(Math.floor(0.5)) // => 0

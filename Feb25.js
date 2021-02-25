@@ -8,34 +8,23 @@
 // Math.floor() -> Rounds a number downward to its nearest integer
 
 Math.round = function(number) {
-  if (number.toString().length === 1) {
-    return number
-  } 
-  let split = number.toString().split(".")
-  if (split[1].length == 1 && (split[1]) >= 5) {
-    return parseInt(split[0]) + 1
-  } else if (split[1].length > 1 && split[1][0] >= 5) {
-    return parseInt(split[0]) + 1
-  }
-  return parseInt(split[0])
+  return number - parseInt(number) >= 0.5 ? parseInt(number) + 1 : parseInt(number)
 };
 
 Math.ceil = function(number) {
-  let split = number.toString().split(".")
-  return split[1] == undefined ? parseInt(split[0]) : parseInt(split[0]) + 1
+  return parseInt(number) === number ? number : parseInt(number) + 1
 };
 
 Math.floor = function(number) {
-  let split = number.toString().split(".")
-  return parseInt(split[0])
+  return parseInt(number)
 };
 
 //TEST
 console.log(Math.round(7.12)) // => 7
 console.log(Math.round(2.49999)) // => 2
 
-// console.log(Math.ceil(0))// => 0
-// console.log(Math.ceil(0.5))// => 1
+console.log(Math.ceil(0))// => 0
+console.log(Math.ceil(0.5))// => 1
 
-// console.log(Math.floor(0.4)) // => 0
-// console.log(Math.floor(0.5)) // => 0
+console.log(Math.floor(0.4)) // => 0
+console.log(Math.floor(0.5)) // => 0

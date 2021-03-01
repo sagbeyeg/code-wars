@@ -42,7 +42,10 @@ function to_nato(words) {
     X: "Xray",
     Y: "Yankee",
     Z: "Zulu"
+    
   }
+  let split = words.replace(/[\s]/g, "").split("")
+  console.log(split)
 }
 
 // Input:

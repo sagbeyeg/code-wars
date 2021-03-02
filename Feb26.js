@@ -44,10 +44,14 @@ function to_nato(words) {
     "Z": "Zulu",
     ".": ".",
     "!": "!",
-    "?": "?"
+    "?": "?",
+    ",": ","
   }
   let split = words.replace(/[\s]/g, "").split("")
-  console.log(split)
+  for (let i = 0; i  < split.length; i++) {
+    split[i] = nato[split[i].toUpperCase()]
+  }
+  return split.join(" ")
 }
 
 // Input:

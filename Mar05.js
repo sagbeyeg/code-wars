@@ -10,11 +10,6 @@
 // There may be duplicates
 // The array may be empty
 
-// Example
-// Input: 1, 2, 3, 4
-// Equivalent names: "one", "two", "three", "four"
-// Sorted by name: "four", "one", "three", "two"
-// Output: 4, 1, 3, 2
 // Notes
 // Don't pack words together:
 
@@ -28,7 +23,7 @@
 
 function sortByName(ary) {
   // create hashmap
-  const numToWords = {
+  const numToWord = {
     1: "one",
     2: "two",
     3: "three",
@@ -47,5 +42,30 @@ function sortByName(ary) {
     30: "thirty",
     50: "fifty"
   }
+
+  
+  const convertToWords = num => {
+    if (numToWord[num]) {
+      numToWord[num]
+    } else if (num.toString().length === 2 && num < 20) {
+      numToWord[num[0]] + "teen"
+    } else if (num.toString().length === 2 && num > 20) {
+      numToWord[num[0]] + "ty"
+    }
+    else if (num.toString().length === 3) {
+      numToWord[num[0]] + "hundred"
+    }
+  } 
+  
+  
+  let arrayOfWords = {}
+  let sorted = []
+
+  //iterate through array and convert to words
+
   return []
 }
+
+console.log(sortByName([1, 2, 3, 4])) //=> 4, 1, 3, 2
+// Equivalent names: "one", "two", "three", "four"
+// Sorted by name: "four", "one", "three", "two"

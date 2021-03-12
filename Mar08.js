@@ -5,7 +5,11 @@
 // Your job is to write an algorithm that gets you from the input to the output.
 
 function preFizz(n) {
-
+  let array = []
+  for (let i = 1; i <= n; i++) {
+    array.push(i)
+  }
+  return array
 }
 
 console.log(preFizz(1))

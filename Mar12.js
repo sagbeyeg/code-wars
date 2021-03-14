@@ -7,9 +7,16 @@
 // You will never receive an empty sequence.
 
 const reverseFizzBuzz = arr => {
-  let splitArray = arr.split( )
+  let splitArray = arr.split(" ")
   console.log(splitArray)
-  return [];
+  let newArray = []
+  for (let i=0; i<splitArray.length; i++) {
+    if (parseInt(splitArray[i])) {
+      newArray.push(parseInt(splitArray[i]))
+    } 
+    newArray.push(newArray[i-1] + 1)
+  }
+  return newArray;
 }
 
 // Tests
